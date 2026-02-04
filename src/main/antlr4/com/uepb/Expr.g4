@@ -1,7 +1,7 @@
 // Exemplo retirado de https://www.antlr.org/
 grammar Expr;
 
-prog:   (expr NEWLINE)* ;
+prog:   (expr NEWLINE?)* ;
 expr:   expr ('*'|'/') expr
     |   expr ('+'|'-') expr
     |   INT

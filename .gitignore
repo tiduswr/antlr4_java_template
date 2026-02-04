@@ -1,6 +1,5 @@
 HELP.md
 **/.antlr/
-**/pcode.jar
 build/
 target/
 !.mvn/wrapper/maven-wrapper.jar
