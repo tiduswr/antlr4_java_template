@@ -1,0 +1,26 @@
+// use soundfont "/home/tiduswr/my-codes/antlr4_java_template/alcahest.sf2"
+tempo 80
+
+// Definições dos Arpejos (Harp) usando o prefixo $
+$sobe_bb = (Bb2:0.25 D3:0.25 F3:0.25 A3:0.25 Bb3:0.25 D4:0.25 F4:0.25 A4:0.25 Bb4:0.25 D5:0.25 F5:0.25 A5:0.25)
+$desce_bb = (A5:0.25 F5:0.25 D5:0.25 Bb4:0.25 A4:0.25 F4:0.25 D4:0.25 Bb3:0.25 A3:0.25 F3:0.25 D3:0.25 Bb2:0.25)
+
+$sobe_g = (G2:0.25 Bb2:0.25 D3:0.25 F3:0.25 G3:0.25 Bb3:0.25 D4:0.25 F4:0.25 G4:0.25 Bb4:0.25 D5:0.25 F5:0.25)
+$desce_g = (F5:0.25 D5:0.25 Bb4:0.25 G4:0.25 F4:0.25 D4:0.25 B3:0.25 G3:0.25 F3:0.25 D3:0.25 B2:0.25 G2:0.25)
+
+// Execução Orquestrada
+parallel {
+    // Pista 0: Harpa
+    (instr 46 ($sobe_bb $desce_bb) * 2)
+
+    // Pista 1: Cordas/Coral (Sustentação)
+    (instr 49 Bb2:12)
+}
+
+parallel {
+    // Pista 0: Harpa
+    (instr 46 ($sobe_g $desce_g) * 2)
+
+    // Pista 1: Cordas/Coral
+    (instr 49 G2:12)
+}
