@@ -21,6 +21,12 @@ public class Antlr4BasicExample implements CompilerEngine{
         var parser = new ExprParser(tokens);
         var tree = parser.prog();
 
+        if(parser.getNumberOfSyntaxErrors() == 0){
+            var calculadora = new Calculadora();
+            var resultado = calculadora.visitProg(tree);
+            System.out.println(resultado);
+        }
+
         if(verbose){
             var guiTask = new GuiVizualizerTask(parser, tree);
             guiTask.run();
